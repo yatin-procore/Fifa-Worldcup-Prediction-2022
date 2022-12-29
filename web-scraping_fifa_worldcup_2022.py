@@ -54,4 +54,6 @@ fifa = [get_matches(year) for year in years]
 df_fifa = pd.concat(fifa, ignore_index=True)
 df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
 
-
+# getting fixture of worldcup 2022 as we still do not have results of the matches
+df_fixture = get_matches(2022)
+df_fixture.to_csv('fifa_worldcup_fixture.csv', index=False)
