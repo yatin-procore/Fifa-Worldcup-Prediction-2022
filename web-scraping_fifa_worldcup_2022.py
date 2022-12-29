@@ -38,4 +38,20 @@ def get_matches(year):
     return df_football
 
 
-print(get_matches('2018'))
+# extracting data for all the yers of worldcup
+
+# fifa = []
+# for year in years:
+#   fifa.append(get_matches(year))
+
+# here we are converting the above commented for loop code into list comprehensions and get each dataframe per year
+fifa = [get_matches(year) for year in years]
+
+# printing the list of matches gathered using the above comprehensive list
+# print(fifa)
+
+# concatenating the results/tables of all the worldcup
+df_fifa = pd.concat(fifa, ignore_index=True)
+df_fifa.to_csv('fifa_worldcup_historical_data.csv', index=False)
+
+
